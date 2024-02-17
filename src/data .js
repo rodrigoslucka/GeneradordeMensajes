@@ -3,13 +3,11 @@ const cursos = [
   { 
     id: 1, 
     nombre: "DERECHOS HUMANOS A NIVEL MUNDIAL Y EN BOLIVIA",
-    av: 'DERECHOS HUMANOS A NIVEL MUNDIAL Y EN BOLIVIA',
     add: false,
   },
   { 
     id: 2, 
-    nombre: "PREVENCION DE LA VIOLENCIA D.S. 3981",
-    av: 'D.S. 3981',
+    nombre: "D.S. N°3981 DE PREVENCION DE LA VIOLENCIA",
     add: false,      
   },
   { 
@@ -32,38 +30,38 @@ const cursos = [
   },
   { 
     id: 6, 
-    nombre: "LEY N.2027 ESTATUTO DEL FUNCIONARIO PUBLICO",
+    nombre: "LEY N°2027 ESTATUTO DEL FUNCIONARIO PUBLICO",
     av: 'LEY 2027',
     add: false,
   },
   { 
     id: 7, 
-    nombre: "OFIMITICA - NIVEL BASICO  PROGRAMA EXCEL",
-    av: 'OFIMITICA NIVEL BASICO PROGRAMA EXCEL',
+    nombre: "OFIMATICA - NIVEL BASICO  PROGRAMA EXCEL",
+    av: 'OFIMATICA NIVEL BASICO PROGRAMA EXCEL',
     add: false,
   },
   { 
     id: 8, 
-    nombre: "OFIMITICA - NIVEL INTERMEDIO  PROGRAMA EXCEL",
+    nombre: "OFIMATICA - NIVEL INTERMEDIO  PROGRAMA EXCEL",
     av: 'OFIMATICA NIVEL INTERMEDIO PROGRAMA EXCEL',
     add: false,
   },
   { 
     id: 9, 
     nombre: "OFIMATICA - NIVEL AVANZADO PROGRAMA WORD",
-    av: 'OFIMITICA NIVEL AVANZADO PROGRAMA EXCEL',
+    av: 'OFIMATICA NIVEL AVANZADO PROGRAMA WORD',
     add: false,
   },
   { 
     id: 10, 
-    nombre: "OFIMITICA - NIVEL AVANZADO PROGRAMA EXCEL",
-    av: 'OFIMITICA NIVEL AVANZADO PROGRAMA EXCEL',
+    nombre: "OFIMATICA - NIVEL AVANZADO PROGRAMA EXCEL",
+    av: 'OFIMATICA NIVEL AVANZADO PROGRAMA EXCEL',
     add: false,
   },
   { 
     id: 11, 
-    nombre: "OFIMITICA - NIVEL AVANZADO PROGRAMA POWER POINT",
-    av: 'OFIMITICA NIVEL AVANZADO PROGRAMA POWER POINT',
+    nombre: "OFIMATICA - NIVEL AVANZADO PROGRAMA POWER POINT",
+    av: 'OFIMATICA NIVEL AVANZADO PROGRAMA POWER POINT',
     add: false,
   },
   { 
@@ -104,7 +102,7 @@ const cursos = [
   },
   { 
     id: 18, 
-    nombre: "LEY N.3131 DEL EJERCICIO PROFESIONAL MEDICO",
+    nombre: "LEY N°3131 DEL EJERCICIO PROFESIONAL MEDICO",
     av: 'LEY 3131',
     add: false,
   },
@@ -122,13 +120,13 @@ const cursos = [
   },
   { 
     id: 21, 
-    nombre: "LEY N.1737 DEL MEDICAMENTO",
+    nombre: "LEY N°1737 DEL MEDICAMENTO",
     av: 'LEY 1737',
     add: false,
   },
   { 
     id: 22, 
-    nombre: "LEY N.475 DE PRESTACIONES DE SERVICIOS DE SALUD INTEGRA Y SU MODIFICACION SEGUN LA LEY 1152",
+    nombre: "LEY N°475 DE PRESTACIONES DE SERVICIOS DE SALUD INTEGRA Y SU MODIFICACION SEGUN LA LEY 1152",
     av: 'LEY 475',
     add: false,
   },
@@ -146,7 +144,7 @@ const cursos = [
   },
   { 
     id: 25, 
-    nombre: "LEY N.482 DE GOBIERNOS AUTONOMOS MUNICIPALES",
+    nombre: "LEY N°482 DE GOBIERNOS AUTONOMOS MUNICIPALES",
     av: 'LEY 482',
     add: false,
   },
@@ -158,19 +156,19 @@ const cursos = [
   },
   { 
     id: 27, 
-    nombre: "LEY N.348 PARA GARANTIZAR A LAS MUJERES UNA VIDA LIBRE DE VIOLENCIA",
+    nombre: "LEY N°348 PARA GARANTIZAR A LAS MUJERES UNA VIDA LIBRE DE VIOLENCIA",
     av: 'LEY 348',
     add: false,
   },
   { 
     id: 28, 
-    nombre: "LEY N.548 CODIGO NIÑA NIÑO Y ADOLESCENTE",
+    nombre: "LEY N°548 CODIGO NIÑA NIÑO Y ADOLESCENTE",
     av: 'LEY 548',
     add: false,
   },
   { 
     id: 29, 
-    nombre: "LEY N.1178 SAFCO DE ADMINISTRACION Y CONTROL GUBERNAMENTAL",
+    nombre: "LEY N°1178 SAFCO DE ADMINISTRACION Y CONTROL GUBERNAMENTAL",
     av: 'LEY 1178',
     add: false,
   },
@@ -194,7 +192,7 @@ const cursos = [
   },
   { 
     id: 33, 
-    nombre: "LEY N.004 - DE LUCHA CONTRA LA CORRUPCION, ENRIQUECIMIENTO ILICITO E INVESTIGACION DE FORTUNAS MARCELO QUIROGA SANTA CRUZ",
+    nombre: "LEY N°004 - DE LUCHA CONTRA LA CORRUPCION, ENRIQUECIMIENTO ILICITO E INVESTIGACION DE FORTUNAS MARCELO QUIROGA SANTA CRUZ",
     av: 'LEY 004',
     add: false,
   },

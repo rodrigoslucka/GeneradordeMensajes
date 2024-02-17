@@ -8,6 +8,9 @@ function App() {
   const [cursosFiltrados, setCursosFiltrados] = useState([]);
   const [cursosSeleccionados, setCursosSeleccionados] = useState([]);
   const [precio, setPrecio] = useState(0);
+  const [isInvalid, setIsInvalid] = useState(false);
+  const [phonePotosi, setPhonePotosi] = useState('ATENCION AL CLIENTE 68413858')
+  const [phoneOthers, setPhoneOthers] = useState('LIC. CARLA VARGAS 69616052')
 
   useEffect(() => {
 
@@ -30,12 +33,11 @@ function App() {
         for (let i = 0; i < cursosSeleccionados.length; i++) {
           nuevoPrecio += 50;
         }
-        setPrecio( nuevoPrecio );
+        setPrecio(nuevoPrecio);
       }
-
-      
     });
-    if( cursosSeleccionados.length === 0 ) {
+
+    if (cursosSeleccionados.length === 0) {
       setPrecio(0)
     }
   }, [cursosSeleccionados, precio, cursosFiltrados]);
@@ -43,19 +45,33 @@ function App() {
   const handleSeletPotosi = () => {
     setIsInPotosi(true);
     setIsSelect(true);
+    setCursosSeleccionados([]);
+    setSearchTerm('')
+    setCursosFiltrados([])
+
+    cursosData.forEach(curso => {
+      curso.add = false;
+    })
   };
 
   const handleSelectOther = () => {
     setIsInPotosi(false);
     setIsSelect(true);
+    setCursosSeleccionados([]);
+    setSearchTerm('')
+    setCursosFiltrados([])
+
+    cursosData.forEach(curso => {
+      curso.add = false;
+    })
   };
 
   const handleSearch = (e) => {
-    const term = e.target.value.replace(/\s/g, '').toLowerCase();
+    const term = e.target.value.toLowerCase();
     setSearchTerm(term);
 
     const filteredCursos = cursosData.filter((curso) => {
-      return curso.nombre.replace(/\s/g, '').toLowerCase().includes(term);
+      return curso.nombre.toLowerCase().includes(term);
     });
     setCursosFiltrados(term ? filteredCursos : []);
   };
@@ -69,7 +85,60 @@ function App() {
       setCursosSeleccionados([...cursosSeleccionados, curso]);
     }
     curso.add = !curso.add
+    setSearchTerm('')
   };
+
+  const handleChangeNumber = () => {
+    if( isInPotosi === true ) {
+      const numero = prompt('Cambiar Numero')
+      setPhonePotosi(numero)
+
+      if( numero === null ) {
+        setPhonePotosi('ATENCION AL CLIENTE 68413858')
+      }
+
+    } else {
+      const numero = prompt('Cambiar Numero')
+      setPhoneOthers(numero)
+      
+      if( numero === null ) {
+        setPhonePotosi('LIC. CARLA VARGAS 69616052')
+      }
+    }
+  }
+
+
+  let messagePotosi1;
+  let messagePotosi2;
+  let othersMessage1;
+  let othersMessage2;
+  let messageCopy;
+
+  const handleCopyClick = () => {
+    const potosiMessage = document.querySelectorAll('.potosi');
+    const othersMessage = document.querySelectorAll('.others');
+    if (potosiMessage.length) {
+      messagePotosi1 = potosiMessage[0].textContent
+      messagePotosi2 = potosiMessage[1].textContent
+      messageCopy = `${messagePotosi1} \n \n${messagePotosi2}`
+      console.log(messageCopy);
+    }
+
+    if (othersMessage.length) {
+      othersMessage1 = othersMessage[0].textContent
+      othersMessage2 = othersMessage[1].textContent
+      messageCopy = `${othersMessage1} \n \n${othersMessage2}`
+      console.log(messageCopy);
+    }
+
+    navigator.clipboard.writeText(messageCopy)
+      .then(() => {
+        alert("Mensaje copiado al portapapeles");
+      })
+      .catch((err) => {
+        console.error('Error al copiar al portapapeles: ', err);
+      });
+  }
 
   return (
     <>
@@ -105,12 +174,21 @@ function App() {
             />
           </div>
 
+          <p
+            className="mt-3 text-center text-gray-500 hover:text-gray-950 cursor-pointer max-w-sm mx-auto"
+            onClick={handleChangeNumber}
+          >¿Quieres cambiar el numero de telefono?</p>
+
+          {isInvalid &&
+            <p className="max-w-sm rounded mt-5 bg-red-600 text-white py-2 text-center mx-auto">Introduzca un numero valido</p>
+          }
+
           {cursosFiltrados.length > 0 && (
             <div className="max-w-md mx-auto mt-8">
-              <ul className="divide-y divide-gray-300">
+              <ul className="divide-y divide-gray-400">
                 {cursosFiltrados.map((curso) => (
                   <li
-                    className={`py-2 px-2 cursor-pointer ${curso.add === true ? 'bg-green-200' : 'bg-neutral-300'}`}
+                    className={`py-2 px-2 cursor-pointer ${curso.add === true ? 'bg-lime-300' : 'bg-gray-100'}`}
                     key={curso.id}
                     onClick={() => handleCursoClick(curso)} > {curso.nombre}
                   </li>
@@ -119,34 +197,48 @@ function App() {
             </div>
           )}
 
-          <div className="flex justify-center mt-10">
-            <div className="max-w-xl rounded overflow-hidden shadow-lg">
-              <div className="px-6 py-4">
-                {isInPotosi ? (
-                  <>
-                    <p> 
-                      NOSOTROS TE OFRECEMOS LOS CURSOS SOLICITADOS POR LA
-                      INSTITUCION RESALTADOS EN COLOR VERDE, ADQUIERELOS YA MISMO Y
-                      FORTALECE TU POSTULACION, VISITA NUESTRAS OFICINAS UBICADAS EN
-                      CALLE LIDIO USTAREZ ESQUINA ARGOTE CIUDAD DE POTOSI O ESCRIBENOS
-                      VIA WHATSAPP ATENCION AL CLIENTE N°.68413858 – PRECIO PROMOCIONAL
-                      DE {`${precio} BS`}. {`${cursosSeleccionados.length === 1 ? 'POR EL CURSO' : `POR LOS ${cursosSeleccionados.length} CURSOS`}`} ({cursosSeleccionados.map(curso => `${curso.av}, `)})</p>
-                    <p
-                      className="mt-5"
-                    >OJO QUE NO TENEMOS NADA QUE VER CON LA INSTITUCION, SOLO LES OFRECEMOS LOS CURSOS SOLICITADOS PARA FORTALECER SUS POSTULACIONES</p>
 
-                  </>
-                ) : (
-                  <>
-                    <p>NOSOTROS TE OFRECEMOS LOS CURSOS SOLICITADOS POR LA
-                      INSTITUCION RESALTADOS EN COLOR VERDE, ADQUIERELOS YA MISMO Y
-                      FORTALECE TU POSTULACION, ESCRIBENOS VIA WHATSAPP ATENCION AL
-                      CLIENTE N°.68413858 – PRECIO PROMOCIONAL DE {`${precio} BS`}. {`${cursosSeleccionados.length === 1 ? 'POR EL CURSO' : `POR LOS ${cursosSeleccionados.length} CURSOS`}`} ({cursosSeleccionados.map(curso => `${curso.av}, `)})</p>
-                    <p
-                      className="mt-5"
-                    >OJO QUE NO TENEMOS NADA QUE VER CON LA INSTITUCION, SOLO LES OFRECEMOS LOS CURSOS SOLICITADOS PARA FORTALECER SUS POSTULACIONES</p>
-                  </>
-                )}
+          <div className="bg-gray-100 pb-10 mt-10">
+            <div className="flex justify-center ">
+              <div className="max-w-xl rounded mt-10 overflow-hidden shadow-lg">
+                <div className="px-6 py-4">
+                  {isInPotosi ? (
+                    <>
+                      <p className="bg-lime-500 potosi py-2 px-2">
+                        NOSOTROS TE OFRECEMOS LOS CURSOS SOLICITADOS POR LA
+                        INSTITUCION RESALTADOS EN COLOR VERDE, ADQUIERELOS YA MISMO Y
+                        FORTALECE TU POSTULACION, VISITA NUESTRAS OFICINAS UBICADAS EN
+                        CALLE LIDIO USTAREZ ESQUINA ARGOTE CIUDAD DE POTOSI O ESCRIBENOS
+                        VIA WHATSAPP - {`${phonePotosi}`} – PRECIO PROMOCIONAL
+                        DE {`${precio} BS`}. {`${cursosSeleccionados.length === 1 ? 'POR EL CURSO' : `POR LOS ${cursosSeleccionados.length} CURSOS`}`} (
+                        {cursosSeleccionados.map((curso, index) => (
+                          index === cursosSeleccionados.length - 1 ? `${curso.nombre}` : `${curso.nombre}, `
+                        ))})
+                      </p>
+                      <p
+                        className="mt-5 bg-yellow-400 potosi py-2 px-2"
+                      >OJO QUE NO TENEMOS NADA QUE VER CON LA INSTITUCION, SOLO LES OFRECEMOS LOS CURSOS SOLICITADOS PARA FORTALECER SUS POSTULACIONES</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="bg-lime-500 others py-2 px-2">NOSOTROS TE OFRECEMOS LOS CURSOS SOLICITADOS POR LA
+                        INSTITUCION RESALTADOS EN COLOR VERDE, ADQUIERELOS YA MISMO Y
+                        FORTALECE TU POSTULACION, ESCRIBENOS VIA WHATSAPP - {`${phoneOthers}`} – PRECIO PROMOCIONAL DE {`${precio} BS`}. {`${cursosSeleccionados.length === 1 ? 'POR EL CURSO' : `POR LOS ${cursosSeleccionados.length} CURSOS`}`} ({cursosSeleccionados.map((curso, index) => (
+                          index === cursosSeleccionados.length - 1 ? `${curso.nombre}` : `${curso.nombre}, `
+                        ))})</p>
+                      <p
+                        className="mt-5 bg-yellow-400 others first:py-2 px-2"
+                      >OJO QUE NO TENEMOS NADA QUE VER CON LA INSTITUCION, SOLO LES OFRECEMOS LOS CURSOS SOLICITADOS PARA FORTALECER SUS POSTULACIONES</p>
+                    </>
+                  )}
+
+                  <div className="flex justify-center">
+                    <button
+                      className="bg-indigo-700 text-white uppercase font-bold py-2 px-2 rounded-md mt-5 mx-auto hover:bg-indigo"
+                      onClick={handleCopyClick}
+                    >Copiar Mensaje</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -157,53 +249,3 @@ function App() {
 }
 
 export default App;
-
-// <div className="flex justify-center mt-10">
-//   <input
-//     className="shadow appearance-none border rounded w-2/6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-//     type="text"
-//     placeholder="Buscar Cursos"
-//   />
-// </div>
-
-// <div className="flex justify-center mt-10">
-//   <div className="max-w-sm rounded overflow-hidden shadow-lg">
-//     <div className="px-6 py-4">
-//       {isInPotosi ? (
-//         <p>Potos zdasdfasdfasdf i</p>
-//       ) : (
-//         <p>para otras ciudades</p>
-//       )}
-//     </div>
-//   </div>
-// </div>
-
-{/* <div className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline select-nombre"
-                      onClick={ () => handleClickCurso( curso.id ) }
-                    >
-                      {curso.nombre}
-                      
-                    </div>
-                    <div
-                      className="bg-red-500 text-white px-2 py-1 rounded"
-                      onClick={ () => handleEliminarCurso(curso.id)} 
-                    >
-                      X
-                    </div> */}
-
-
-//                     <li className="flex justify-between items-center border-b border-gray-300 py-2">
-//   <span
-//     className={`self-center ${todo.done ? 'line-through' : ''}`}
-//     onClick={() => onToggleTodo(todo.id)}
-//   >
-//     {description}
-//   </span>
-
-//   <button
-//     className="bg-red-500 text-white px-3 py-1 rounded"
-//     onClick={() => onDeleteTodo(todo.id)}
-//   >
-//     Borrar
-//   </button>
-// </li>
