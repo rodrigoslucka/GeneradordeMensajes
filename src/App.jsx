@@ -8,7 +8,6 @@ function App() {
   const [cursosFiltrados, setCursosFiltrados] = useState([]);
   const [cursosSeleccionados, setCursosSeleccionados] = useState([]);
   const [precio, setPrecio] = useState(0);
-  const [isInvalid, setIsInvalid] = useState(false);
   const [phonePotosi, setPhonePotosi] = useState('ATENCION AL CLIENTE 68413858')
   const [phoneOthers, setPhoneOthers] = useState('LIC. CARLA VARGAS 69616052')
 
@@ -89,24 +88,23 @@ function App() {
   };
 
   const handleChangeNumber = () => {
-    if( isInPotosi === true ) {
+    if (isInPotosi === true) {
       const numero = prompt('Cambiar Numero')
+      console.log(numero);
       setPhonePotosi(numero)
-
-      if( numero === null ) {
+      if (numero === null) {
         setPhonePotosi('ATENCION AL CLIENTE 68413858')
       }
 
     } else {
       const numero = prompt('Cambiar Numero')
       setPhoneOthers(numero)
-      
-      if( numero === null ) {
-        setPhonePotosi('LIC. CARLA VARGAS 69616052')
+
+      if (numero === null) {
+        setPhoneOthers('LIC. CARLA VARGAS 69616052')
       }
     }
   }
-
 
   let messagePotosi1;
   let messagePotosi2;
@@ -121,14 +119,12 @@ function App() {
       messagePotosi1 = potosiMessage[0].textContent
       messagePotosi2 = potosiMessage[1].textContent
       messageCopy = `${messagePotosi1} \n \n${messagePotosi2}`
-      console.log(messageCopy);
     }
 
     if (othersMessage.length) {
       othersMessage1 = othersMessage[0].textContent
       othersMessage2 = othersMessage[1].textContent
       messageCopy = `${othersMessage1} \n \n${othersMessage2}`
-      console.log(messageCopy);
     }
 
     navigator.clipboard.writeText(messageCopy)
@@ -136,8 +132,17 @@ function App() {
         alert("Mensaje copiado al portapapeles");
       })
       .catch((err) => {
-        console.error('Error al copiar al portapapeles: ', err);
+        alert('Error al copiar al portapapeles: ', err);
       });
+  }
+
+  const handleReset = () => {
+    setCursosFiltrados([]);
+    setCursosSeleccionados([]);
+
+    cursosData.forEach(curso => {
+      curso.add = false;
+    })
   }
 
   return (
@@ -178,10 +183,6 @@ function App() {
             className="mt-3 text-center text-gray-500 hover:text-gray-950 cursor-pointer max-w-sm mx-auto"
             onClick={handleChangeNumber}
           >¿Quieres cambiar el numero de telefono?</p>
-
-          {isInvalid &&
-            <p className="max-w-sm rounded mt-5 bg-red-600 text-white py-2 text-center mx-auto">Introduzca un numero valido</p>
-          }
 
           {cursosFiltrados.length > 0 && (
             <div className="max-w-md mx-auto mt-8">
@@ -241,7 +242,15 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className="flex justify-center">
+              <button
+                className="bg-indigo-700 text-white uppercase font-bold py-2 px-2 mt-5 rounded-md mx-auto hover:bg-indigo"
+                onClick={handleReset}
+              >Resetear</button>
+            </div>
           </div>
+
+
         </>
       )}
     </>
