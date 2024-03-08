@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import cursosData from "./data ";
+import Modal from "./Modal";
+import Swal from 'sweetalert2'
 
 function App() {
   const [isInPotosi, setIsInPotosi] = useState();
@@ -8,12 +10,15 @@ function App() {
   const [cursosFiltrados, setCursosFiltrados] = useState([]);
   const [cursosSeleccionados, setCursosSeleccionados] = useState([]);
   const [precio, setPrecio] = useState(0);
+  const [isOpen, setIsOpen] = useState(Boolean);
+  const [cambiarNumber, setCambiarNumber] = useState(false);
   const [phonePotosi, setPhonePotosi] = useState('ATENCION AL CLIENTE 68413858')
   const [phoneOthers, setPhoneOthers] = useState('LIC. CARLA VARGAS 69616052')
+  const [message, setMessage] = useState(true)
 
   useEffect(() => {
 
-    cursosSeleccionados.forEach(curso => {
+    cursosSeleccionados.forEach(() => {
 
       if (cursosSeleccionados.length === 1) {
         setPrecio(80);
@@ -88,23 +93,22 @@ function App() {
   };
 
   const handleChangeNumber = () => {
-    if (isInPotosi === true) {
-      const numero = prompt('Cambiar Numero')
-      console.log(numero);
-      setPhonePotosi(numero)
-      if (numero === null) {
-        setPhonePotosi('ATENCION AL CLIENTE 68413858')
-      }
+    setCambiarNumber(!cambiarNumber);
+    setMessage(!message)
+  }
 
-    } else {
-      const numero = prompt('Cambiar Numero')
-      setPhoneOthers(numero)
+  const handleChangeNumberMessage = (valor) => {
 
-      if (numero === null) {
-        setPhoneOthers('LIC. CARLA VARGAS 69616052')
+    if (valor !== phonePotosi) {
+      setPhonePotosi(valor);
+    }
+
+    if (isInPotosi === false) {
+      if (valor !== phoneOthers) {
+        setPhoneOthers(valor);
       }
     }
-  }
+  };
 
   let messagePotosi1;
   let messagePotosi2;
@@ -129,7 +133,13 @@ function App() {
 
     navigator.clipboard.writeText(messageCopy)
       .then(() => {
-        alert("Mensaje copiado al portapapeles");
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Copiado",
+          showConfirmButton: false,
+          timer: 1500
+        });
       })
       .catch((err) => {
         alert('Error al copiar al portapapeles: ', err);
@@ -145,13 +155,17 @@ function App() {
     })
   }
 
+  const handleClosedModal = () => {
+    setIsOpen(false)
+  }
+
   return (
     <>
       <h1 className="text-5xl text-center mt-10 uppercase mb-10">
         seleccione una opcion
       </h1>
 
-      <div className=" mt-7 flex justify-center gap-4">
+      <div className="mt-7 flex justify-center gap-4">
         <button
           className="bg-indigo-700 uppercase text-white p-3 hover:bg-indigo-800 transition-colors w-60 rounded-md"
           onClick={() => handleSeletPotosi()}
@@ -180,9 +194,24 @@ function App() {
           </div>
 
           <p
-            className="mt-3 text-center text-gray-500 hover:text-gray-950 cursor-pointer max-w-sm mx-auto"
+            className="mt-5 text-center text-gray-500 hover:text-gray-950 cursor-pointer max-w-sm mx-auto"
             onClick={handleChangeNumber}
-          >¿Quieres cambiar el numero de telefono?</p>
+          >{message ? '¿Quieres cambiar el numero?': 'Cerrar'}</p>
+
+          {
+            cambiarNumber &&
+            <div className="flex flex-col items-center justify-center mt-5">
+              <select
+                className="p-2 border rounded focus:outline-none focus:border-gray-500 appearance-none transition w-52"
+                onChange={(e) => handleChangeNumberMessage(e.target.value)}
+                defaultValue="-- Seleccione --"
+              >
+                <option className="text-center" disabled>-- Seleccione --</option>
+                <option value={'LIC. CARLA VARGAS 69616052'}>Lic. Carla</option>
+                <option value={'ATENCION AL CLIENTE 68413858'}>Atencion al Cliente</option>
+              </select>
+            </div>
+          }
 
           {cursosFiltrados.length > 0 && (
             <div className="max-w-md mx-auto mt-8">
@@ -205,7 +234,7 @@ function App() {
                 <div className="px-6 py-4">
                   {isInPotosi ? (
                     <>
-                      <p className="bg-lime-500 potosi py-2 px-2">
+                      <p className="bg-lime-500 potosi py-2 px-2 text-justify">
                         NOSOTROS TE OFRECEMOS LOS CURSOS SOLICITADOS POR LA
                         INSTITUCION RESALTADOS EN COLOR VERDE, ADQUIERELOS YA MISMO Y
                         FORTALECE TU POSTULACION, VISITA NUESTRAS OFICINAS UBICADAS EN
@@ -215,40 +244,59 @@ function App() {
                         {cursosSeleccionados.map((curso, index) => (
                           index === cursosSeleccionados.length - 1 ? `${curso.nombre}` : `${curso.nombre}, `
                         ))})
+                        RECUERDA QUE PUEDES CAPACITARTE GRATIS LAS 24 HORAS EN www.quimerasbolivia.com Y SOLO DEBES HACER LA INVERSION EN CASO DE QUE REQUIERAS LOS CERTIFICADOS Y MATERIAL EXTRA DE CAPACITACION,
+                        PUES NOSOTROS NUNCA COBRAMOS POR APRENDER
                       </p>
                       <p
-                        className="mt-5 bg-yellow-400 potosi py-2 px-2"
+                        className="mt-5 bg-yellow-400 potosi py-2 px-2 text-justify"
                       >OJO QUE NO TENEMOS NADA QUE VER CON LA INSTITUCION, SOLO LES OFRECEMOS LOS CURSOS SOLICITADOS PARA FORTALECER SUS POSTULACIONES</p>
                     </>
                   ) : (
                     <>
-                      <p className="bg-lime-500 others py-2 px-2">NOSOTROS TE OFRECEMOS LOS CURSOS SOLICITADOS POR LA
+                      <p className="bg-lime-500 others py-2 px-2 text-justify">NOSOTROS TE OFRECEMOS LOS CURSOS SOLICITADOS POR LA
                         INSTITUCION RESALTADOS EN COLOR VERDE, ADQUIERELOS YA MISMO Y
                         FORTALECE TU POSTULACION, ESCRIBENOS VIA WHATSAPP - {`${phoneOthers}`} – PRECIO PROMOCIONAL DE {`${precio} BS`}. {`${cursosSeleccionados.length === 1 ? 'POR EL CURSO' : `POR LOS ${cursosSeleccionados.length} CURSOS`}`} ({cursosSeleccionados.map((curso, index) => (
                           index === cursosSeleccionados.length - 1 ? `${curso.nombre}` : `${curso.nombre}, `
-                        ))})</p>
+                        ))})
+                        RECUERDA QUE PUEDES CAPACITARTE GRATIS LAS 24 HORAS EN www.quimerasbolivia.com Y SOLO DEBES HACER LA INVERSION EN CASO DE QUE REQUIERAS LOS CERTIFICADOS Y MATERIAL EXTRA DE CAPACITACION,
+                        PUES NOSOTROS NUNCA COBRAMOS POR APRENDER
+                      </p>
+
                       <p
-                        className="mt-5 bg-yellow-400 others first:py-2 px-2"
+                        className="mt-5 bg-yellow-400 others first:py-2 px-2 text-justify"
                       >OJO QUE NO TENEMOS NADA QUE VER CON LA INSTITUCION, SOLO LES OFRECEMOS LOS CURSOS SOLICITADOS PARA FORTALECER SUS POSTULACIONES</p>
                     </>
                   )}
 
-                  <div className="flex justify-center">
+                  <div className="flex justify-center gap-6">
                     <button
-                      className="bg-indigo-700 text-white uppercase font-bold py-2 px-2 rounded-md mt-5 mx-auto hover:bg-indigo"
+                      className="bg-indigo-700 text-white uppercase font-bold py-2 px-2 rounded-md mt-5  hover:bg-indigo w-44"
                       onClick={handleCopyClick}
                     >Copiar Mensaje</button>
+
+                    <button
+                      className="bg-indigo-700 text-white uppercase font-bold py-2 px-2 rounded-md mt-5  hover:bg-indigo w-44"
+                      onClick={() => setIsOpen(true)}
+                    >Ver Resumen</button>
                   </div>
                 </div>
               </div>
             </div>
             <div className="flex justify-center">
               <button
-                className="bg-indigo-700 text-white uppercase font-bold py-2 px-2 mt-5 rounded-md mx-auto hover:bg-indigo"
+                className="bg-indigo-700 text-white uppercase font-bold py-2 px-2 mt-5 rounded-md mx-auto hover:bg-indigo w-44"
                 onClick={handleReset}
-              >Resetear</button>
+              >Restablecer</button>
             </div>
           </div>
+
+          {isOpen &&
+            <Modal
+              handleClosedModal={handleClosedModal}
+              cursosSeleccionados={cursosSeleccionados}
+              precio={precio}
+            />
+          }
 
 
         </>
