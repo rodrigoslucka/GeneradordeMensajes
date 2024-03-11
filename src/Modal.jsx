@@ -57,19 +57,18 @@ const Modal = ({ handleClosedModal, cursosSeleccionados, precio }) => {
 			>
 				<FontAwesomeIcon icon={faTimes} size="2x" />
 			</button>
-			<div className="bg-white p-5 rounded flex flex-col justify-center items-center gap-5 min-w-96 max-w-3xl h-auto">
+			<div className={`bg-white text-center p-5 rounded items-center gap-5 min-w-96 max-w-3xl ${cursosSeleccionados.length <= 10 ? 'm-h-auto':'h-3/4'} overflow-auto`}>
 				<h1 className='uppercase text-xl font-bold'>Resumen</h1>
-
 				{
 					cursosSeleccionados.length ?
 						<>
 							<p
-								className='text-center text-gray-500 hover:text-gray-950 cursor-pointer max-w-sm mx-auto'
+								className='text-center text-gray-500 hover:text-gray-950 cursor-pointer max-w-sm mx-auto my-3'
 								onClick={hancleOptions}
 							>¿Quieres Seleccionar algunas opciones ?</p>
 							{options &&
 								<>
-									<div className='flex justify-center gap-4'>
+									<div className='flex justify-center gap-4 mb-2'>
 										<p
 											className='text-gray-600 hover:text-gray-800 transition-colors cursor-pointer'
 											onClick={handleNacionales}
@@ -87,23 +86,23 @@ const Modal = ({ handleClosedModal, cursosSeleccionados, precio }) => {
 							<div>
 								{cursosSeleccionados.map((curso, index) => (
 									<div key={curso.id}>
-										<p className='mensaje'>{`${index + 1}. ${curso.nombre}`}</p>
+										<p className='mensaje text-left'>{`${index + 1}. ${curso.nombre}`}</p>
 										<br />
 									</div>
 								))}
 
-								<p className='mensaje'>✅ **PRECIO PROMOCIONAL DE {precio} BS POR {cursosSeleccionados.length === 1 ? 'UN CURSO**' : `LOS ${cursosSeleccionados.length} CURSOS**`}</p>
+								<p className='mensaje text-left'>✅ **PRECIO PROMOCIONAL DE {precio} BS POR {cursosSeleccionados.length === 1 ? 'UN CURSO**' : `LOS ${cursosSeleccionados.length} CURSOS**`}</p>
 								<br />
 								{nacionales &&
-									<p className='mensaje'>✅ INFO DE LOS CURSOS: 69616052 LIC. CARLA VARGAS O DALE CLICK AQUÍ: https://wa.link/1kai2e</p>
+									<p className='mensaje text-left'>✅ INFO DE LOS CURSOS: 69616052 LIC. CARLA VARGAS O DALE CLICK AQUÍ: https://wa.link/1kai2e</p>
 								}
 
 								{locales &&
-									<p className='mensaje'>✅ INFO DE LOS CURSOS: 68413858 ATENCION AL CLIENTE CONSULTORA MULTIDISCIPLINARIA QUIMERAS – ICARUS CONSULTORES O DALE CLICK AQUÍ: https://wa.link/jmp0kx </p>
+									<p className='mensaje text-left'>✅ INFO DE LOS CURSOS: 68413858 ATENCION AL CLIENTE CONSULTORA MULTIDISCIPLINARIA QUIMERAS – ICARUS CONSULTORES O DALE CLICK AQUÍ: https://wa.link/jmp0kx </p>
 								}
 							</div>
 							<button
-								className='bg-indigo-700 uppercase text-white p-3 hover:bg-indigo-800 transition-colors w-60 rounded-md'
+								className='bg-indigo-700 uppercase text-white p-3 hover:bg-indigo-800 transition-colors w-60 rounded-md my-4 mt-6'
 								onClick={handleCopyClick}
 							>Copiar</button>
 
