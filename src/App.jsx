@@ -196,7 +196,7 @@ function App() {
           <p
             className="mt-5 text-center text-gray-500 hover:text-gray-950 cursor-pointer max-w-sm mx-auto"
             onClick={handleChangeNumber}
-          >{message ? '¿Quieres cambiar el numero?': 'Cerrar'}</p>
+          >{message ? '¿Quieres cambiar el numero?' : 'Cerrar'}</p>
 
           {
             cambiarNumber &&
@@ -298,7 +298,10 @@ function App() {
             />
           }
 
-
+          <div className="text-center py-3 text-gray-600">
+            <p>Copyright {new Date().getFullYear()} &#169; Consultora Multidisciplinaria Quimeras - Icarus Consultores - Cel: 69616052</p>
+            <p>Desarrollado por: Ing. Joel Llanos Puita - Cel: 72549764</p>
+          </div>
         </>
       )}
     </>

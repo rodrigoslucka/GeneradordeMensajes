@@ -437,6 +437,11 @@ const cursos = [
     id: 88, 
     nombre: "MANEJO DEL SOFTWARE SPSS ESTATISTICS",
     add: false,
+  },
+  { 
+    id: 89, 
+    nombre: "MANEJO, ADMINISTRACION Y GESTION DEL SOFTWARE POWER BI",
+    add: false,
   }
 ];
 
