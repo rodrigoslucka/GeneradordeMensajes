@@ -442,6 +442,16 @@ const cursos = [
     id: 89, 
     nombre: "MANEJO, ADMINISTRACION Y GESTION DEL SOFTWARE POWER BI",
     add: false,
+  },
+  { 
+    id: 90, 
+    nombre: "LEY Nº 535 DE MINERIA Y METALURGIA",
+    add: false,
+  },
+  { 
+    id: 91, 
+    nombre: "MANEJO DE BASE DE DATOS CON MYSQL",
+    add: false,
   }
 ];
 
