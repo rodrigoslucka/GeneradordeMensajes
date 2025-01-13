@@ -453,6 +453,11 @@ const cursos = [
     nombre: "MANEJO DE BASE DE DATOS CON MYSQL",
     add: false,
   }
+   { 
+    id: 92, 
+    nombre: "ADMINISTRACION DEL SISTEMA OPERATIVO LINUX",
+    add: false,
+  },
 ];
 
 export default cursos;
