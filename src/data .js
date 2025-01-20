@@ -457,6 +457,11 @@ const cursos = [
     id: 92, 
     nombre: "ADMINISTRACION DEL SISTEMA OPERATIVO LINUX",
     add: false,
+  },
+  { 
+    id: 93, 
+    nombre: "MANEJO DEL SOFTWARE DE INFORMACION CLINICO ESTADISTICO SICE",
+    add: false,
   }
 ];
 
