@@ -247,13 +247,18 @@ function App() {
                         RECUERDA QUE PUEDES CAPACITARTE GRATIS LAS 24 HORAS EN www.quimerasbolivia.com Y SOLO DEBES HACER LA INVERSION EN CASO DE QUE REQUIERAS LOS CERTIFICADOS Y MATERIAL EXTRA DE CAPACITACION,
                         PUES NOSOTROS NUNCA COBRAMOS POR APRENDER
                       </p>
-                      <p
-                        className="mt-5 bg-yellow-400 potosi py-2 px-2 text-justify"
-                      >OJO QUE NO TENEMOS NADA QUE VER CON LA INSTITUCION, SOLO LES OFRECEMOS LOS CURSOS SOLICITADOS PARA FORTALECER SUS POSTULACIONES</p>
+                      <p className="mt-5 bg-yellow-400 potosi py-2 px-2 text-justify"
+                      >OJO QUE NO TENEMOS NADA QUE VER CON LA INSTITUCION, SOLO LES OFRECEMOS LOS CURSOS SOLICITADOS PARA FORTALECER SUS POSTULACIONES
+                      </p>
+                      <p className="mt-5 bg-blue-400 potosi py-2 px-2 text-justify"
+                      >⚠ ADVERTENCIA: INFORMAMOS QUE PERSONAS INESCRUPULOSAS ESTAN UTILIZANDO REDES SOCIALES, ADEMAS DE NUESTROS COMUNICADOS PARA SUPLANTAR A NUESTROS AGENTES DE VENTA Y REALIZAR ESTAFAS, 
+                        POR ELLO LES COMUNICAMOS QUE LOS UNICOS NUMEROS DE CONTANTO DE LA CONSULTORA MULTIDISCIPLINARIA QUIMERAS - ICARUS CONSULTORES SON: 69616052 / 68413858 / 72433016
+                      </p>                    
                     </>
                   ) : (
                     <>
-                      <p className="bg-lime-500 others py-2 px-2 text-justify">NOSOTROS TE OFRECEMOS LOS CURSOS SOLICITADOS POR LA
+                      <p className="bg-lime-500 others py-2 px-2 text-justify">
+                        NOSOTROS TE OFRECEMOS LOS CURSOS SOLICITADOS POR LA
                         INSTITUCION RESALTADOS EN COLOR VERDE, ADQUIERELOS YA MISMO Y
                         FORTALECE TU POSTULACION, ESCRIBENOS VIA WHATSAPP - {`${phoneOthers}`} – PRECIO PROMOCIONAL DE {`${precio} BS`}. {`${cursosSeleccionados.length === 1 ? 'POR EL CURSO' : `POR LOS ${cursosSeleccionados.length} CURSOS`}`} ({cursosSeleccionados.map((curso, index) => (
                           index === cursosSeleccionados.length - 1 ? `${curso.nombre}` : `${curso.nombre}, `
@@ -261,14 +266,12 @@ function App() {
                         RECUERDA QUE PUEDES CAPACITARTE GRATIS LAS 24 HORAS EN www.quimerasbolivia.com Y SOLO DEBES HACER LA INVERSION EN CASO DE QUE REQUIERAS LOS CERTIFICADOS Y MATERIAL EXTRA DE CAPACITACION,
                         PUES NOSOTROS NUNCA COBRAMOS POR APRENDER
                       </p>
-
-                      <p
-                        className="mt-5 bg-yellow-400 others first:py-2 px-2 text-justify"
+                      <p className="mt-5 bg-yellow-400 others first:py-2 px-2 text-justify"
                       >OJO QUE NO TENEMOS NADA QUE VER CON LA INSTITUCION, SOLO LES OFRECEMOS LOS CURSOS SOLICITADOS PARA FORTALECER SUS POSTULACIONES</p>
-
-                      <p
-                        className="mt-5 bg-sky blue-400 others first:py-2 px-2 text-justify"
-                      >⚠ ADVERTENCIA: INFORMAMOS QUE PERSONAS INESCRUPULOSAS ESTAN UTILIZANDO REDES SOCIALES, ADEMAS DE NUESTROS COMUNICADOS PARA SUPLANTAR A NUESTROS AGENTES DE VENTA Y REALIZAR ESTAFAS, POR ELLO LES COMUNICAMOS QUE LOS UNICOS NUMEROS DE CONTANTO DE LA CONSULTORA MULTIDISCIPLINARIA QUIMERAS - ICARUS CONSULTORES SON: 69616052 / 68413858 / 72433016</p>
+                      <p className="mt-5 bg-blue-400 others py-2 px-2 text-justify">
+                        ⚠ ADVERTENCIA: INFORMAMOS QUE PERSONAS INESCRUPULOSAS ESTAN UTILIZANDO REDES SOCIALES, ADEMAS DE NUESTROS COMUNICADOS PARA SUPLANTAR A NUESTROS AGENTES DE VENTA Y REALIZAR ESTAFAS, 
+                        POR ELLO LES COMUNICAMOS QUE LOS UNICOS NUMEROS DE CONTANTO DE LA CONSULTORA MULTIDISCIPLINARIA QUIMERAS - ICARUS CONSULTORES SON: 69616052 / 68413858 / 72433016
+                      </p>
                     </>
                   )}
 
