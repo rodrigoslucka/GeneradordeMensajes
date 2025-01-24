@@ -253,8 +253,7 @@ function App() {
                       <p className="mt-5 bg-blue-400 potosi py-2 px-2 text-justify"
                       >⚠ ADVERTENCIA: INFORMAMOS QUE PERSONAS INESCRUPULOSAS ESTAN UTILIZANDO REDES SOCIALES, ADEMAS DE NUESTROS COMUNICADOS PARA SUPLANTAR A NUESTROS AGENTES DE VENTA Y REALIZAR ESTAFAS, 
                         POR ELLO LES COMUNICAMOS QUE LOS UNICOS NUMEROS DE CONTANTO DE LA CONSULTORA MULTIDISCIPLINARIA QUIMERAS - ICARUS CONSULTORES SON: 69616052 / 68413858 / 72433016
-                      </p>
-                    </>
+                      </p>                    
                     </>
                   ) : (
                     <>
