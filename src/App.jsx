@@ -112,8 +112,10 @@ function App() {
 
   let messagePotosi1;
   let messagePotosi2;
+  let messagePotosi3;
   let othersMessage1;
   let othersMessage2;
+  let othersMessage3;
   let messageCopy;
 
   const handleCopyClick = () => {
@@ -122,13 +124,15 @@ function App() {
     if (potosiMessage.length) {
       messagePotosi1 = potosiMessage[0].textContent
       messagePotosi2 = potosiMessage[1].textContent
-      messageCopy = `${messagePotosi1} \n \n${messagePotosi2}`
+      messagePotosi3 = potosiMessage[2].textContent
+      messageCopy = `${messagePotosi1} \n \n${messagePotosi2} \n \n${messagePotosi3}`
     }
 
     if (othersMessage.length) {
       othersMessage1 = othersMessage[0].textContent
       othersMessage2 = othersMessage[1].textContent
-      messageCopy = `${othersMessage1} \n \n${othersMessage2}`
+      othersMessage3 = othersMessage[2].textContent
+      messageCopy = `${othersMessage1} \n \n${othersMessage2} \n \n${othersMessage3}`
     }
 
     navigator.clipboard.writeText(messageCopy)
