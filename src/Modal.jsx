@@ -100,6 +100,9 @@ const Modal = ({ handleClosedModal, cursosSeleccionados, precio }) => {
 								{locales &&
 									<p className='mensaje text-left'>✅ INFO DE LOS CURSOS: 68413858 ATENCION AL CLIENTE CONSULTORA MULTIDISCIPLINARIA QUIMERAS – ICARUS CONSULTORES O DALE CLICK AQUÍ: https://wa.link/jmp0kx </p>
 								}
+								{
+									<p className='mensaje text-left'>⚠ ADVERTENCIA: INFORMAMOS QUE PERSONAS INESCRUPULOSAS ESTAN UTILIZANDO REDES SOCIALES, ADEMAS DE NUESTROS COMUNICADOS PARA SUPLANTAR A NUESTROS AGENTES DE VENTA Y REALIZAR ESTAFAS, POR ELLO LES COMUNICAMOS QUE LOS UNICOS NUMEROS DE CONTANTO DE LA CONSULTORA MULTIDISCIPLINARIA QUIMERAS - ICARUS CONSULTORES SON: 69616052 / 68413858 / 72433016 </p>
+								}
 							</div>
 							<button
 								className='bg-indigo-700 uppercase text-white p-3 hover:bg-indigo-800 transition-colors w-60 rounded-md my-4 mt-6'
