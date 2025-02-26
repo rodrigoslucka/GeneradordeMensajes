@@ -462,7 +462,17 @@ const cursos = [
     id: 93, 
     nombre: "MANEJO DEL SOFTWARE DE INFORMACION CLINICO ESTADISTICO SICE",
     add: false,
-  }
+  },
+  { 
+    id: 94, 
+    nombre: "MANEJO DEL SISTEMA INTEGRADO DE LA ADMINISTRACIÓN TRIBUTARIA SIAT EN LINEA",
+    add: false,
+  },
+  { 
+    id: 95, 
+    nombre: "MANEJO DE PROGRAMAS DE EDUCACIÓN Y CAPACITACIÓN VIRTUAL (ZOOM, MEET, WEBEX, CLASSROOM, NEARPOD Y QUIZIZZ)",
+    add: false,
+  },
 ];
 
 export default cursos;
