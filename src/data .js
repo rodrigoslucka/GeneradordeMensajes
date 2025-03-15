@@ -473,6 +473,11 @@ const cursos = [
     nombre: "MANEJO DE PROGRAMAS DE EDUCACIÓN Y CAPACITACIÓN VIRTUAL (ZOOM, MEET, WEBEX, CLASSROOM, NEARPOD Y QUIZIZZ)",
     add: false,
   },
+  { 
+    id: 96, 
+    nombre: "NUEVAS TECNOLOGÍAS DE LA INFORMACIÓN Y LEGAL TECH JUDICIAL",
+    add: false,
+  }
 ];
 
 export default cursos;
