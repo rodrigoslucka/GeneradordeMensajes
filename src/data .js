@@ -482,7 +482,7 @@ const cursos = [
     id: 97, 
     nombre: "SISTEMA INTEGRADO DE ADMINISTRACION FINANCIERA SIAF",
     add: false,
-  }
+  },
   { 
     id: 98, 
     nombre: "LIBRE OFFICE (CALC WRITER E IMPRESS)",
