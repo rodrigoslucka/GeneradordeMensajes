@@ -485,7 +485,7 @@ const cursos = [
   }
   { 
     id: 98, 
-    nombre: "LIBRE OFFICE (CALC, WRITER E IMPRESS)",
+    nombre: "LIBRE OFFICE (CALC WRITER E IMPRESS)",
     add: false
   }
 ];
