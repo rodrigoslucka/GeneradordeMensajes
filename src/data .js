@@ -485,7 +485,17 @@ const cursos = [
   },
   { 
     id: 98, 
-    nombre: "LIBRE OFFICE (CALC WRITER E IMPRESS)",
+    nombre: "LIBRE OFFICE CALC",
+    add: false
+  },
+  { 
+    id: 99, 
+    nombre: "LIBRE OFFICE WRITER",
+    add: false
+  },
+ { 
+    id: 100, 
+    nombre: "LIBRE OFFICE IMPRESS",
     add: false
   }
 ];
