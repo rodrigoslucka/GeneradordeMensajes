@@ -497,6 +497,16 @@ const cursos = [
     id: 100, 
     nombre: "LIBRE OFFICE IMPRESS",
     add: false
+  },
+  { 
+    id: 101, 
+    nombre: "OFIMATICA - NIVEL AVANZADO PROGRAMA ACCESS",
+    add: false
+  },
+  { 
+    id: 102, 
+    nombre: "OFIMATICA - NIVEL AVANZADO PROGRAMA PROJECT",
+    add: false
   }
 ];
 
