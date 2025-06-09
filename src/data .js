@@ -507,6 +507,16 @@ const cursos = [
     id: 102, 
     nombre: "OFIMATICA - NIVEL AVANZADO PROGRAMA PROJECT",
     add: false
+  },
+  { 
+    id: 103, 
+    nombre: "LA SUBASTA ELECTRÓNICA Y EL MERCADO VIRTUAL ESTATAL (D.S. 4443)",
+    add: false
+  },
+   { 
+    id: 104, 
+    nombre: "COMPRO HECHO EN BOLIVIA (D.S. 4505)",
+    add: false
   }
 ];
 
