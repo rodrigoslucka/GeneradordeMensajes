@@ -522,7 +522,43 @@ const cursos = [
     id: 105, 
     nombre: "LA ENFERMEDAD DEL CHAGAS - DETECCIÓN, DIAGNÓSTICO, TRATAMIENTO, PREVENCIÓN, CONTROL Y SU ELIMINACIÓN",
     add: false
+  },
+   { 
+    id: 106, 
+    nombre: "LA RABIA HUMANA - DETECCIÓN, DIAGNÓSTICO, TRATAMIENTO, PREVENCIÓN, CONTROL Y SU ELIMINACIÓN",
+    add: false
+  },
+   { 
+    id: 107, 
+    nombre: "LA ENFERMEDAD DEL DENGUE - DETECCIÓN, DIAGNÓSTICO, TRATAMIENTO, PREVENCIÓN, CONTROL Y SU ELIMINACIÓN",
+    add: false
+  },
+   { 
+    id: 108, 
+    nombre: "LA DESNUTRICIÓN - DETECCIÓN, DIAGNÓSTICO, TRATAMIENTO, PREVENCIÓN, CONTROL Y SU ELIMINACIÓN",
+    add: false
+  },
+   { 
+    id: 109, 
+    nombre: "LA TUBERCULOSIS - DETECCIÓN, DIAGNÓSTICO, TRATAMIENTO, PREVENCIÓN, CONTROL Y SU ELIMINACIÓN",
+    add: false
+  },
+   { 
+    id: 110, 
+    nombre: "MANEJO DEL REGISTRO NOMINAL DE VACUNACIÓN ELECTRÓNICO RNVe",
+    add: false
+  },
+   { 
+    id: 111, 
+    nombre: "PRIMEROS AUXILIOS EN SITUACIONES DE EMERGENCIA",
+    add: false
+  },
+   { 
+    id: 112, 
+    nombre: "LA ENFERMEDAD DE LA CHIKUNGUNYA - DETECCIÓN, DIAGNÓSTICO, TRATAMIENTO, PREVENCIÓN, CONTROL Y SU ELIMINACIÓN",
+    add: false
   }
+
 ];
 
 export default cursos;
