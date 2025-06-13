@@ -517,6 +517,11 @@ const cursos = [
     id: 104, 
     nombre: "COMPRO HECHO EN BOLIVIA (D.S. 4505)",
     add: false
+  },
+   { 
+    id: 105, 
+    nombre: "LA ENFERMEDAD DEL CHAGAS - DETECCIÓN, DIAGNÓSTICO, TRATAMIENTO, PREVENCIÓN, CONTROL Y SU ELIMINACIÓN",
+    add: false
   }
 ];
 
