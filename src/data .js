@@ -557,6 +557,11 @@ const cursos = [
     id: 112, 
     nombre: "LA ENFERMEDAD DE LA CHIKUNGUNYA - DETECCIÓN, DIAGNÓSTICO, TRATAMIENTO, PREVENCIÓN, CONTROL Y SU ELIMINACIÓN",
     add: false
+  },
+   { 
+    id: 113, 
+    nombre: "MANEJO DE TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN 'TIC'",
+    add: false
   }
 
 ];
