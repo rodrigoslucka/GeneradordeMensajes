@@ -562,6 +562,11 @@ const cursos = [
     id: 113, 
     nombre: "MANEJO DE TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN 'TIC'",
     add: false
+  },
+   { 
+    id: 114, 
+    nombre: "MANEJO DEL SISTEMA DE CONTROL FINANCIERO DE SALUD SICOFS",
+    add: false
   }
 
 ];
