@@ -567,6 +567,11 @@ const cursos = [
     id: 114, 
     nombre: "MANEJO DEL SISTEMA DE CONTROL FINANCIERO DE SALUD SICOFS",
     add: false
+  },
+   { 
+    id: 115, 
+    nombre: "LEY GENERAL DEL TRABAJO EN BOLIVIA",
+    add: false
   }
 
 ];
