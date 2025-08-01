@@ -570,7 +570,7 @@ const cursos = [
   },
    { 
     id: 115, 
-    nombre: "LEY GENERAL DEL TRABAJO EN BOLIVIA",
+    nombre: "LEY GENERAL DEL TRABAJO EN BOLIVIA DE 8 DE DICIEMBRE DE 1942",
     add: false
   }
 
