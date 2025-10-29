@@ -572,6 +572,11 @@ const cursos = [
     id: 115, 
     nombre: "LEY GENERAL DEL TRABAJO EN BOLIVIA DE 8 DE DICIEMBRE DE 1942",
     add: false
+  },
+   { 
+    id: 116, 
+    nombre: "LEY N° 2341 DE PROCEDIMIENTO ADMINISTRATIVO",
+    add: false
   }
 
 ];
