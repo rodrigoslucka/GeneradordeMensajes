@@ -97,7 +97,7 @@ const cursos = [
   },
   { 
     id: 20, 
-    nombre: "BIOSEGURIDAD HOSPITALARIA EN EL CONTEXTO DE LA COVID-19 ACTUALIZADO",
+    nombre: "MEDIDAS DE BIOSEGURIDAD HOSPITALARIA EN EL CONTEXTO DE LA COVID-19 ACTUALIZADO",
     add: false,
   },
   { 
