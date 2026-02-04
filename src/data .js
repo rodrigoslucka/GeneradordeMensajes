@@ -577,6 +577,11 @@ const cursos = [
     id: 116, 
     nombre: "LEY N° 2341 DE PROCEDIMIENTO ADMINISTRATIVO",
     add: false
+  },
+   { 
+    id: 117, 
+    nombre: "MARKETING DIGITAL Y MANEJO PROFESIONAL DE REDES SOCIALES (FACEBOOK ADS, YOUTUBE ADS, TIKTOK ADS, CANVA Y CAPCUT)",
+    add: false
   }
 
 ];
