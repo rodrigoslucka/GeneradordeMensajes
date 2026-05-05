@@ -57,7 +57,7 @@ const cursos = [
   },
   { 
     id: 12, 
-    nombre: "PROGRAMACION EN JAVA",
+    nombre: "PROGRAMACION EN JAVA ASISTIDO POR LA I.A.",
     add: false,
   },
   { 
