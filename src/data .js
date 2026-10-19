@@ -582,6 +582,11 @@ const cursos = [
     id: 117, 
     nombre: "MARKETING DIGITAL Y MANEJO PROFESIONAL DE REDES SOCIALES (FACEBOOK ADS, YOUTUBE ADS, TIKTOK ADS, CANVA Y CAPCUT)",
     add: false
+  },
+   { 
+    id: 118, 
+    nombre: "TRATO DIGNO Y CALIDAD DE ATENCION EN SALUD",
+    add: false
   }
 
 ];
